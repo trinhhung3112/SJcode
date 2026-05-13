@@ -1,62 +1,3 @@
-// YIC cleaned interactions
-/* Cursor */
-// const cur=document.getElementById('cur'),ring=document.getElementById('curRing');
-// let mx=0,my=0,rx=0,ry=0;
-// if(cur&&ring){
-//   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
-//   (function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
-// }
-
-/* Page System */
-let current='home';
-function goPage(id,fromPop){
-  if(id==='home'){goHome(fromPop);return;}
-  const from=document.getElementById('page-'+current);
-  const to=document.getElementById('page-'+id);
-  if(!from||!to)return;
-  to.classList.add('active');
-  to.scrollTop=0;
-  current=id;
-  document.body.style.overflow='auto';
-  document.documentElement.style.overflow='auto';
-  const nb=document.getElementById('navBack');
-  if(nb){nb.style.opacity='1';nb.style.pointerEvents='auto';}
-  if(!fromPop)try{history.pushState({page:id},'','#'+id);}catch(e){}
-  setTimeout(()=>{
-    const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.12});
-    to.querySelectorAll('.rv').forEach(el=>io.observe(el));
-    const srIo=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.12});
-    to.querySelectorAll('.sr').forEach(el=>srIo.observe(el));
-  },150);
-}
-function goHome(fromPop){
-  const from=document.getElementById('page-'+current);
-  const home=document.getElementById('page-home');
-  if(from){
-    from.classList.remove('active');
-    from.style.visibility='hidden';
-    from.style.zIndex='0';
-  }
-  if(home){
-    home.style.visibility='visible';
-    home.style.zIndex='1';
-    home.classList.add('active');
-  }
-  current='home';
-  document.body.style.overflow='hidden';
-  document.documentElement.style.overflow='hidden';
-  const nb2=document.getElementById('navBack');
-  if(nb2){nb2.style.opacity='0';nb2.style.pointerEvents='none';}
-  try{if(!fromPop)history.pushState({page:'home'},'','#');}catch(e){}
-}
-try{
-  window.addEventListener('popstate',e=>{
-    const page=(e.state&&e.state.page)?e.state.page:'home';
-    if(page==='home')goHome(true);else goPage(page,true);
-  });
-  history.replaceState({page:'home'},'','#');
-}catch(e){}
-
 /* Card Reveal */
 window.addEventListener('DOMContentLoaded',()=>{
   document.querySelectorAll('.card-3d').forEach((card,i)=>{
@@ -67,17 +8,6 @@ window.addEventListener('DOMContentLoaded',()=>{
     },900+Math.floor(i/2)*350);
   });
 });
-
-/* Video Autoplay */
-function forcePlay(){
-  document.querySelectorAll('video').forEach(v=>{v.muted=true;const p=v.play();if(p)p.catch(()=>{});});
-}
-forcePlay();
-document.addEventListener('DOMContentLoaded',forcePlay);
-document.addEventListener('click',forcePlay,{once:true});
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)forcePlay();});
-setTimeout(forcePlay,800);
-setTimeout(forcePlay,2000);
 
 /* Hero Switch */
 const TITLES=[
@@ -102,13 +32,9 @@ function switchHero(idx){
   if(idx===0){
     runSeq();
   } else {
-    // 시퀀스 중단하고 바로 타이틀
     stopSeq();
-    const sub=document.getElementById('hlSub');
-    const big=document.getElementById('hlBig');
     const seq=document.getElementById('hlSeq');
     if(seq) seq.style.display='none';
-    // home-right를 기존 방식으로
     const hr=document.getElementById('homeRight');
     if(hr){
       hr.innerHTML=`<div class="hl-beyond" id="hlBeyond" style="opacity:0;animation:hlFade .6s ease .2s forwards;">${t.beyond}</div>
@@ -163,20 +89,58 @@ function runSeq(){
   });
 }
 
-/* Location */
-function locActivate(id){
-  document.querySelectorAll('.loc-item').forEach(el=>el.classList.toggle('active',el.id==='loc-'+id));
-  document.querySelectorAll('.loc-pin').forEach(el=>el.classList.toggle('active',el.id==='pin-'+id));
+runSeq();
+
+function forcePlay(){
+  document.querySelectorAll('video').forEach((v) => {
+    v.muted=true;
+    const p=v.play();
+    if(p)p.catch(()=>{});}
+  );
 }
 
-/* Clock */
 function updateClock(){
   const now=new Date();
   const kst=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Seoul'}));
   const vst=new Date(now.toLocaleString('en-US',{timeZone:'Asia/Ho_Chi_Minh'}));
-  const fmt=d=>{let h=d.getHours(),m=d.getMinutes(),ap=h>=12?'PM':'AM';h=h%12||12;return(h<10?'0'+h:h)+':'+(m<10?'0'+m:m)+ap;};
-  const k=document.getElementById('clockKST'),v=document.getElementById('clockVST');
-  if(k)k.textContent=fmt(kst);if(v)v.textContent=fmt(vst);
+  const fmt=d => {
+    let h=d.getHours(), m=d.getMinutes(), ap=h >= 12 ? 'PM':'AM';
+    h = h % 12 || 12;
+    return( h < 10 ? '0'+ h : h) + ':' + (m < 10 ? '0' + m : m) +ap;
+  };
+  const k = document.getElementById('clockKST'), v = document.getElementById('clockVST');
+  if (k) {k.textContent=fmt(kst)};
+  if(v) {v.textContent=fmt(vst)};
 }
-updateClock();setInterval(updateClock,1000);
-runSeq();
+
+updateClock();
+setInterval(updateClock,1000);
+forcePlay();
+document.addEventListener('DOMContentLoaded',forcePlay);
+document.addEventListener('click',forcePlay,{once:true});
+document.addEventListener('visibilitychange', () => {
+  if(!document.hidden) {
+    forcePlay();
+  }
+});
+setTimeout(forcePlay,800);
+setTimeout(forcePlay,2000);
+
+function locActivate(id){
+  document.querySelectorAll('.loc-item').forEach((el) => {
+    el.classList.toggle('active',el.id==='loc-'+id);
+  });
+  document.querySelectorAll('.loc-pin').forEach((el) => {
+    el.classList.toggle('active',el.id==='pin-'+id);
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  setTimeout(()=>{
+    const io= new IntersectionObserver((entries) => {entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v');});},{threshold:.12});
+    document.querySelectorAll('.rv').forEach((el) => {io.observe(el);});
+    const srIo=new IntersectionObserver((entries) => {entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on');});},{threshold:.12});
+    document.querySelectorAll('.sr').forEach((el) => {srIo.observe(el);});
+  },150);
+});
+

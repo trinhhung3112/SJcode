@@ -10,25 +10,20 @@
 </head>
 <body>
 
-<!-- <div class="cur" id="cur"></div>
-<div class="cur-ring" id="curRing"></div> -->
-
 <nav id="nav" class="navbar-custom">
-  
   <div class="nav-left">
-    <button class="nav-logo" onclick="goHome()">
+    <a href="./" class="nav-logo">
       YOUNG INT’L CORP
-    </button>
-
-    <button class="nav-back" id="navBack" onclick="goHome()">
+    </a>
+    <a href="./" class="nav-back" id="navBack" tabindex="-1" aria-hidden="true">
       ← Go Back
-    </button>
+    </a>
   </div>
-
+  
   <div class="nav-center">
-    <button class="nav-dot active" onclick="switchHero(0)"></button>
-    <button class="nav-dot" onclick="switchHero(1)"></button>
-    <button class="nav-dot" onclick="switchHero(2)"></button>
+    <button type="button" class="nav-dot active" onclick="switchHero(0)"></button>
+    <button type="button" class="nav-dot" onclick="switchHero(1)"></button>
+    <button type="button" class="nav-dot" onclick="switchHero(2)"></button>
   </div>
 
   <div class="nav-right">
@@ -43,7 +38,6 @@
 
 </nav>
 
-<!-- SNS Buttons -->
 <div class="sns-wrap">
   <a class="sns-btn" href="https://www.youtube.com/@yichiddenchampion" target="_blank" title="YouTube">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 002.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
@@ -58,9 +52,7 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
   </a>
 </div>
-<!-- 플로팅 햄버거 -->
-<!-- 드롭다운 메뉴 -->
-<!-- HOME -->
+
 <div class="page home-page active" id="page-home">
   <div class="vid-bg">
     <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;transition:opacity .8s ease;">
@@ -72,13 +64,13 @@
     <video muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;">
       <source src="assets/videos/hero-3.mp4" type="video/mp4">
     </video>
-    
+
   </div>
   <div class="vid-overlay"></div>
 
   <div class="home-left">
     <div class="cards-3d" id="cards3d">
-      <div class="card-3d" onclick="goPage('kr')">
+      <a class="card-3d" href="html/kr.html">
         <div class="card-bg" style="background:#000;">
           <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
             <source src="assets/videos/hero-4.mp4" type="video/mp4">
@@ -87,8 +79,8 @@
         <div class="card-overlay"></div>
         <div class="card-arr">&#8594;</div>
         <div class="card-body"><div class="card-name">Companies</div><div class="card-sub">Who we are</div></div>
-      </div>
-      <div class="card-3d" onclick="goPage('one')">
+      </a>
+      <a class="card-3d" href="html/one.html">
         <div class="card-bg" style="background:#000;overflow:hidden;">
           <video autoplay muted loop playsinline style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;object-fit:cover;">
             <source src="assets/videos/hero-5.mp4" type="video/mp4">
@@ -97,8 +89,8 @@
         <div class="card-overlay"></div>
         <div class="card-arr">&#8594;</div>
         <div class="card-body"><div class="card-name">Factories</div><div class="card-sub">The Performance</div></div>
-      </div>
-      <div class="card-3d" onclick="goPage('hanam')">
+      </a>
+      <a class="card-3d" href="html/hanam.html">
         <div class="card-bg" style="background:#000;overflow:hidden;">
           <video autoplay muted loop playsinline style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;object-fit:cover;">
             <source src="assets/videos/hero-6.mp4" type="video/mp4">
@@ -107,8 +99,8 @@
         <div class="card-overlay"></div>
         <div class="card-arr">&#8594;</div>
         <div class="card-body"><div class="card-name">Humaneness</div><div class="card-sub">仁 · You · I · Connection</div></div>
-      </div>
-      <div class="card-3d" onclick="goPage('vina')">
+      </a>
+      <a class="card-3d" href="html/vina.html">
         <div class="card-bg" style="background:#000;overflow:hidden;">
           <video autoplay muted loop playsinline style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;object-fit:cover;">
             <source src="assets/videos/hero-7.mp4" type="video/mp4">
@@ -117,8 +109,8 @@
         <div class="card-overlay"></div>
         <div class="card-arr">&#8594;</div>
         <div class="card-body"><div class="card-name">Sustainability</div><div class="card-sub">People &amp; Earth</div></div>
-      </div>
-      <div class="card-3d" onclick="goPage('usa')">
+      </a>
+      <a class="card-3d" href="html/usa.html">
         <div class="card-bg" style="background:#000;overflow:hidden;">
           <video autoplay muted loop playsinline style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;object-fit:cover;">
             <source src="assets/videos/hero-8.mp4" type="video/mp4">
@@ -127,8 +119,8 @@
         <div class="card-overlay"></div>
         <div class="card-arr">&#8594;</div>
         <div class="card-body"><div class="card-name">Activities</div><div class="card-sub">Join Us</div></div>
-      </div>
-      <div class="card-3d" onclick="goPage('ydf')">
+      </a>
+      <a class="card-3d" href="html/ydf.html">
         <div class="card-bg" style="background:#000;overflow:hidden;">
           <video autoplay muted loop playsinline style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;object-fit:cover;">
             <source src="assets/videos/hero-9.mp4" type="video/mp4">
@@ -137,7 +129,7 @@
         <div class="card-overlay"></div>
         <div class="card-arr">&#8594;</div>
         <div class="card-body"><div class="card-name">YICONIC</div><div class="card-sub">Our vision for what comes next</div></div>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -150,272 +142,7 @@
       <span class="hl-seq-final" id="hlBig">YIC</span>
     </div>
   </div>
-
-<!-- INNER PAGES -->
-
-<!-- COMPANIES -->
-
-<div class="page story-page" id="page-kr">
-  <div class="st-hero"><div class="st-hero-num">01</div><div class="st-hero-body">
-    <div class="st-hero-tag">Who We Are</div>
-    <h1 class="st-hero-title">Com<em>panies</em></h1>
-    <p class="st-hero-desc">서울에서 시작해 베트남을 거쳐 미국까지. 하나의 철학으로 연결됩니다.</p>
-  </div></div>
-  <div class="st-sec sr"><div class="st-two"><div>
-    <div class="st-tag">Seoul · Korea</div><h2 class="st-h">YIC <em>KR + YDF</em></h2>
-    <p class="st-p">서울 방배동 본사. 같은 건물, 두 법인. 경영·기획·디자인 개발. 한국 35명.</p>
-    <div class="st-steps">
-      <div class="st-step"><div class="st-step-n">HQ</div><div><div class="st-step-title">글로벌 컨트롤타워</div><div class="st-step-body">베트남 공장·미국 영업·브랜드 파트너 통합 관리</div></div></div>
-      <div class="st-step"><div class="st-step-n">ODM</div><div><div class="st-step-title">트렌드 분석 + 3D CLO</div><div class="st-step-body">기획부터 납품까지 원스톱 ODM 제안</div></div></div>
-    </div>
-  </div><div class="sr delay1">
-    <div class="st-big-num">35<em>명</em></div><div class="st-big-label">Korea Staff</div>
-    <div style="margin-top:32px;"><div class="st-big-num" style="font-size:clamp(36px,5vw,64px);">857<em>억</em></div><div class="st-big-label">2025 Revenue</div></div>
-  </div></div></div>
-  <div class="st-sec mid sr"><div class="st-two"><div class="sr delay1">
-    <div class="st-big-num">1,100<em>+</em></div><div class="st-big-label">Vietnam Staff</div>
-  </div><div>
-    <div class="st-tag">Hanoi · Vietnam</div><h2 class="st-h">YIC <em>ONE</em></h2>
-    <p class="st-p">하노이 미주 영업 허브. 서울 HQ와 베트남 공장을 잇는 전략 거점.</p>
-  </div></div></div>
-  <div class="st-sec dark sr"><div>
-    <div class="st-tag light">Walnut Creek · California</div><h2 class="st-h light">YIC <em>USA</em></h2>
-    <p class="st-p light">미국 Top-tier 브랜드 공략을 위한 북미 영업 거점.</p>
-    <div class="st-pills">
-      <div class="st-pill light">VUORI</div><div class="st-pill light">FIGS</div>
-      <div class="st-pill light">AETHER</div><div class="st-pill light">Outdoor Voices</div>
-      <div class="st-pill light">Cotopaxi</div><div class="st-pill light">Mad Rock</div><div class="st-pill light">Black Diamond</div>
-    </div>
-  </div></div>
-  <div class="st-footer"><div></div><div class="st-footer-copy">© 2025 YIC · Est. 2011</div></div>
 </div>
-
-<div class="page story-page" id="page-one">
-  <div class="st-hero"><div class="st-hero-num">02</div><div class="st-hero-body">
-    <div class="st-hero-tag">The Performance</div>
-    <h1 class="st-hero-title">Fac<em>tories</em></h1>
-    <p class="st-hero-desc">24개 라인, 1,100명. 하나의 LEAN 기준으로 운영됩니다.</p>
-  </div></div>
-  <div class="st-sec sr"><div class="st-two"><div>
-    <div class="st-tag">Factory 1 · Est. 2013</div><h2 class="st-h">YIC <em>VINA</em></h2>
-    <p class="st-p">Ha Nam. 바지·셔츠 전문. 370명, 12라인.</p>
-  </div><div class="sr delay1">
-    <div class="st-big-num">370<em>명</em></div><div class="st-big-label">Staff</div>
-    <div style="margin-top:24px;"><div class="st-big-num" style="font-size:clamp(36px,5vw,64px);">12</div><div class="st-big-label">Lines</div></div>
-  </div></div></div>
-  <div class="st-sec mid sr"><div class="st-two"><div class="sr delay1">
-    <div class="st-big-num">600<em>명</em></div><div class="st-big-label">Staff</div>
-    <div style="margin-top:24px;"><div class="st-big-num" style="font-size:clamp(36px,5vw,64px);">12</div><div class="st-big-label">Lines</div></div>
-  </div><div>
-    <div class="st-tag">Factory 2 · Est. 2023</div><h2 class="st-h">YIC <em>HANAM</em></h2>
-    <p class="st-p">Ha Nam. 자켓·셔츠 전문. 600명, 12라인.</p>
-  </div></div></div>
-  <div class="st-sec dark sr"><div>
-    <div class="st-tag light">LEAN System</div><h2 class="st-h light">1PCS <em>FLOW</em></h2>
-    <p class="st-p light">U자형 라인. 불량률 3% → 1%. ERP 실시간 생산 관리.</p>
-    <div class="st-stats">
-      <div class="sr delay1"><div class="st-big-num light">24</div><div class="st-big-label light">Total Lines</div></div>
-      <div class="sr delay2"><div class="st-big-num light">1<em>%</em></div><div class="st-big-label light">Defect Rate</div></div>
-      <div class="sr delay3"><div class="st-big-num light">150k<em>+</em></div><div class="st-big-label light">Pcs / Month</div></div>
-    </div>
-  </div></div>
-  <div class="st-sec green sr"><div>
-    <div class="st-tag dark-tag">Coming Soon</div><h2 class="st-h green-h">YIC <em>QUY NINH</em></h2>
-    <p class="st-p dark-tag">유기농 농장, 지역사회 상생 — SYMBIOSIS.</p>
-  </div></div>
-  <div class="st-footer"><div></div><div class="st-footer-copy">© 2025 YIC · Est. 2011</div></div>
-</div>
-
-<div class="page story-page" id="page-hanam">
-  <div class="st-hero"><div class="st-hero-num">仁</div><div class="st-hero-body">
-    <div class="st-hero-tag">Core Philosophy</div>
-    <h1 class="st-hero-title">Human<em>eness</em></h1>
-    <p class="st-hero-desc">仁. 공자가 말한 최고의 덕목. YIC의 모든 결정은 여기서 시작됩니다.</p>
-  </div></div>
-  <div class="st-sec sr"><div>
-    <div class="st-tag">The Origin</div>
-    <h2 class="st-h" style="font-size:clamp(56px,10vw,140px);">仁</h2>
-    <p class="st-p" style="max-width:600px;">직원의 행복과 성장을 제품 품질의 근간으로 봅니다. 공장을 넘어선 생태계를 지향합니다.</p>
-  </div></div>
-  <div class="st-sec mid sr"><div style="width:100%;">
-    <div class="st-tag">You · I · Connection</div>
-    <div class="st-steps">
-      <div class="st-step"><div class="st-step-n">You</div><div><div class="st-step-title">우리의 파트너, 고객, 지구</div><div class="st-step-body">단순 생산자가 아닌 엔드 유저의 관점으로 만듭니다</div></div></div>
-      <div class="st-step"><div class="st-step-n">I</div><div><div class="st-step-title">우리의 사람, 기술, 철학</div><div class="st-step-body">한국 35명, 베트남 1,100명. 모든 손길에 책임과 자부심</div></div></div>
-      <div class="st-step"><div class="st-step-n">Connection</div><div><div class="st-step-title">우리가 존재하는 이유</div><div class="st-step-body">만드는 사람과 입는 사람 사이의 보이지 않는 연결</div></div></div>
-    </div>
-  </div></div>
-  <div class="st-sec dark sr"><div>
-    <div class="st-quote light">"Hidden Champion에서<br><em>Responsible Champion</em>으로."</div>
-    <p class="st-p light" style="margin-top:24px;">단순히 잘 만드는 것을 넘어, 어떻게 만드는지가 우리의 정체성입니다.</p>
-  </div></div>
-  <div class="st-footer"><div></div><div class="st-footer-copy">© 2025 YIC · Est. 2011</div></div>
-</div>
-
-<div class="page story-page" id="page-vina">
-  <div class="st-hero"><div class="st-hero-num">03</div><div class="st-hero-body">
-    <div class="st-hero-tag">People &amp; Earth</div>
-    <h1 class="st-hero-title">Sustain<em>ability</em></h1>
-    <p class="st-hero-desc">사람, 지구, 성과. 세 기둥이 함께 서야 진짜 성장입니다.</p>
-  </div></div>
-  <div class="st-sec sr"><div class="st-two"><div>
-    <div class="st-tag">Pillar 01</div><h2 class="st-h"><em>People</em></h2>
-    <p class="st-p">직원의 행복이 제품의 품질입니다. Columbia CR Audit(2014)부터 자체 YIC 기준(2023)까지.</p>
-  </div><div class="sr delay1">
-    <div class="st-big-num">1,100<em>+</em></div><div class="st-big-label">People We Care For</div>
-  </div></div></div>
-  <div class="st-sec mid sr"><div class="st-two"><div class="sr delay1">
-    <div class="st-big-num">1<em>%</em></div><div class="st-big-label">Defect Rate (LEAN)</div>
-  </div><div>
-    <div class="st-tag">Pillar 02</div><h2 class="st-h"><em>Planet</em></h2>
-    <p class="st-p">LEAN 생산 = 원단 낭비 감소 = 환경 부담 감소. BEMIS Sew Free로 화학 접착제 최소화.</p>
-  </div></div></div>
-  <div class="st-sec dark sr"><div>
-    <div class="st-tag light">Pillar 03</div><h2 class="st-h light"><em>Performance</em></h2>
-    <p class="st-p light">지속 가능한 성장만이 진짜 성과입니다.</p>
-    <div class="st-stats">
-      <div class="sr delay1"><div class="st-big-num light">857<em>억</em></div><div class="st-big-label light">2025 Revenue</div></div>
-      <div class="sr delay2"><div class="st-big-num light">1,600<em>억</em></div><div class="st-big-label light">2027 Target</div></div>
-    </div>
-  </div></div>
-  <div class="st-footer"><div></div><div class="st-footer-copy">© 2025 YIC · Est. 2011</div></div>
-</div>
-
-<div class="page story-page" id="page-usa">
-  <div class="st-hero"><div class="st-hero-num">04</div><div class="st-hero-body">
-    <div class="st-hero-tag">Join Us</div>
-    <h1 class="st-hero-title">Activ<em>ities</em></h1>
-    <p class="st-hero-desc">우리는 만들기만 하지 않습니다. 직접 입고, 뛰고, 오릅니다.</p>
-  </div></div>
-  <div class="st-sec sr"><div style="width:100%;">
-    <div class="st-tag">End-User Perspective</div><h2 class="st-h">We <em>Live It.</em></h2>
-    <p class="st-p">아웃도어 스포츠를 즐기는 사람들이 아웃도어 의류를 만듭니다.</p>
-    <div class="st-steps">
-      <div class="st-step"><div class="st-step-n">🧗</div><div><div class="st-step-title">Climbing</div><div class="st-step-body">서울 실내부터 베트남 석회암 절벽까지 직접 테스트</div></div></div>
-      <div class="st-step"><div class="st-step-n">🏃</div><div><div class="st-step-title">Trail Running</div><div class="st-step-body">한국과 베트남 트레일에서 기술 원단 실전 검증</div></div></div>
-      <div class="st-step"><div class="st-step-n">🏅</div><div><div class="st-step-title">Marathon</div><div class="st-step-body">YIC가 주최 — 사람들, 파트너들, 지역사회가 함께</div></div></div>
-    </div>
-  </div></div>
-  <div class="st-sec green sr"><div>
-    <div class="st-quote" style="color:#111;">"단순 제조사가 아닌,<br><em style="color:#fff;">엔드 유저로서 만드는 회사.</em>"</div>
-  </div></div>
-  <div class="st-footer"><div></div><div class="st-footer-copy">© 2025 YIC · Est. 2011</div></div>
-</div>
-
-<div class="page story-page" id="page-ydf">
-  <div class="st-hero"><div class="st-hero-num">05</div><div class="st-hero-body">
-    <div class="st-hero-tag">Our Vision</div>
-    <h1 class="st-hero-title">YIC<em>ONIC</em></h1>
-    <p class="st-hero-desc">Black Box에서 Glass Box로. 데이터가 흐르는 투명한 공장.</p>
-  </div></div>
-  <div class="st-sec sr"><div style="width:100%;">
-    <div class="st-tag">Digital Roadmap</div>
-    <div class="st-steps">
-      <div class="st-step"><div class="st-step-n">2025</div><div><div class="st-step-title">ERP · SEWMAN Go-Live</div><div class="st-step-body">실시간 생산 관리. 모바일 바코드. 재고·발주·원가 통합</div></div></div>
-      <div class="st-step"><div class="st-step-n">2026</div><div><div class="st-step-title">MES 도입</div><div class="st-step-body">공장 바닥 모든 데이터 실시간 — Black Box → Glass Box</div></div></div>
-      <div class="st-step"><div class="st-step-n">2027</div><div><div class="st-step-title">AI 지능형 공장</div><div class="st-step-body">불량 사전 예측. 사람이 더 사람다운 일에 집중</div></div></div>
-    </div>
-  </div></div>
-  <div class="st-sec dark sr"><div>
-    <div class="st-tag light">Revenue Vision</div>
-    <div class="st-stats">
-      <div class="sr delay1"><div class="st-big-num light">857<em>억</em></div><div class="st-big-label light">2025</div></div>
-      <div class="sr delay2"><div class="st-big-num light">1,600<em>억</em></div><div class="st-big-label light">2027 Target</div></div>
-    </div>
-    <p class="st-p light" style="margin-top:32px;">Hidden Champion → Global ODM → 미국 Top-tier E-Commerce.</p>
-  </div></div>
-  <div class="st-sec green sr"><div>
-    <div class="st-quote" style="color:#111;">"데이터 기반 디지털 지능 +<br>사람을 아끼는 인본주의.<br><em>그것이 YICONIC입니다.</em>"</div>
-  </div></div>
-  <div class="st-footer"><div></div><div class="st-footer-copy">© 2025 YIC · Est. 2011</div></div>
-</div>
-
-<div class="page" id="page-location" style="background:#111 !important;color:#f7f5ef;overflow-y:auto !important;display:block !important;">
-  <div class="loc-wrap">
-    <div class="loc-map-side">
-      <div style="width:100%;max-width:460px;">
-        <svg viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-          <defs>
-            <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <radialGradient id="bg" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#1a2a1a"/><stop offset="100%" stop-color="#0a0a0a"/></radialGradient>
-          </defs>
-          <rect width="400" height="520" fill="url(#bg)" rx="16"/>
-          <g stroke="rgba(255,255,255,.04)" stroke-width="1">
-            <line x1="0" y1="130" x2="400" y2="130"/><line x1="0" y1="260" x2="400" y2="260"/>
-            <line x1="0" y1="390" x2="400" y2="390"/><line x1="100" y1="0" x2="100" y2="520"/>
-            <line x1="200" y1="0" x2="200" y2="520"/><line x1="300" y1="0" x2="300" y2="520"/>
-          </g>
-          <path d="M200 80 C215 75 228 78 235 88 C242 98 240 112 232 122 C224 132 210 138 198 135 C186 132 178 122 176 110 C174 98 180 85 200 80Z" fill="rgba(141,198,63,.12)" stroke="rgba(141,198,63,.3)" stroke-width="1.2"/>
-          <path d="M185 210 C195 205 205 208 210 218 C218 235 215 255 208 270 C200 288 192 305 190 325 C188 345 192 365 200 378 C208 391 215 398 212 408 C207 418 193 416 183 406 C173 396 170 375 172 355 C174 335 180 315 182 295 C184 275 180 255 178 238 C176 222 178 212 185 210Z" fill="rgba(141,198,63,.08)" stroke="rgba(141,198,63,.2)" stroke-width="1"/>
-          <path d="M210 108 Q235 165 200 218" fill="none" stroke="rgba(141,198,63,.25)" stroke-width="1" stroke-dasharray="5 4" class="loc-line"/>
-          <path d="M197 228 L193 293" fill="none" stroke="rgba(141,198,63,.2)" stroke-width="1" stroke-dasharray="4 4" class="loc-line"/>
-          <path d="M191 303 L194 370" fill="none" stroke="rgba(141,198,63,.15)" stroke-width="1" stroke-dasharray="4 4" class="loc-line"/>
-          <g class="loc-pin" id="pin-seoul" onclick="locActivate('seoul')">
-            <circle class="outer" cx="210" cy="108" r="14" fill="rgba(141,198,63,.2)"/>
-            <circle class="inner" cx="210" cy="108" r="5" fill="#8dc63f" filter="url(#glow)"/>
-            <text x="226" y="105" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif" font-weight="700">SEOUL</text>
-            <text x="226" y="116" font-size="7.5" fill="rgba(255,255,255,.35)" font-family="sans-serif">YIC KR · YDF</text>
-          </g>
-          <g class="loc-pin" id="pin-hanoi" onclick="locActivate('hanoi')">
-            <circle class="outer" cx="197" cy="224" r="14" fill="rgba(141,198,63,.2)"/>
-            <circle class="inner" cx="197" cy="224" r="5" fill="#8dc63f" filter="url(#glow)"/>
-            <text x="213" y="221" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif" font-weight="700">HANOI</text>
-            <text x="213" y="232" font-size="7.5" fill="rgba(255,255,255,.35)" font-family="sans-serif">YIC ONE · Hub</text>
-          </g>
-          <g class="loc-pin" id="pin-hanam" onclick="locActivate('hanam')">
-            <circle class="outer" cx="192" cy="298" r="14" fill="rgba(141,198,63,.2)"/>
-            <circle class="inner" cx="192" cy="298" r="5" fill="#8dc63f" filter="url(#glow)"/>
-            <text x="208" y="295" font-size="9" fill="rgba(255,255,255,.75)" font-family="sans-serif" font-weight="700">HA NAM</text>
-            <text x="208" y="306" font-size="7.5" fill="rgba(255,255,255,.35)" font-family="sans-serif">VINA · HANAM</text>
-          </g>
-          <g class="loc-pin" id="pin-quyninh" onclick="locActivate('quyninh')" style="opacity:.55">
-            <circle class="outer" cx="194" cy="375" r="12" fill="rgba(255,255,255,.08)"/>
-            <circle class="inner" cx="194" cy="375" r="4" fill="rgba(255,255,255,.4)"/>
-            <text x="208" y="372" font-size="9" fill="rgba(255,255,255,.45)" font-family="sans-serif" font-weight="700">QUY NINH</text>
-            <text x="208" y="383" font-size="7.5" fill="rgba(255,255,255,.25)" font-family="sans-serif">Under Construction</text>
-          </g>
-          <text x="14" y="114" font-size="7" fill="rgba(255,255,255,.15)" font-family="monospace">37°N</text>
-          <text x="14" y="230" font-size="7" fill="rgba(255,255,255,.15)" font-family="monospace">21°N</text>
-          <text x="14" y="304" font-size="7" fill="rgba(255,255,255,.15)" font-family="monospace">20°N</text>
-          <text x="14" y="380" font-size="7" fill="rgba(255,255,255,.15)" font-family="monospace">14°N</text>
-          <text x="20" y="492" font-size="8" fill="rgba(255,255,255,.18)" font-family="sans-serif" font-weight="700" letter-spacing="2">YIC GLOBAL NETWORK</text>
-        </svg>
-      </div>
-    </div>
-    <div class="loc-list-side">
-      <div class="loc-header">
-        <div class="loc-header-tag">Our Locations</div>
-        <h1 class="loc-header-title">Where<br><em>We Are.</em></h1>
-      </div>
-      <div class="loc-item active" id="loc-seoul" onclick="locActivate('seoul')">
-        <div class="loc-item-top"><div class="loc-item-name">Seoul</div><div class="loc-item-badge">HQ · Studio</div></div>
-        <div class="loc-item-addr">11-7 Seocho-daero 22-gil, Bangbae-dong, Seocho-gu, Seoul</div>
-        <div class="loc-item-tags"><div class="loc-item-tag">YIC KR</div><div class="loc-item-tag">YDF</div><div class="loc-item-tag">R&amp;D · HQ</div></div>
-      </div>
-      <div class="loc-item" id="loc-hanoi" onclick="locActivate('hanoi')">
-        <div class="loc-item-top"><div class="loc-item-name">Hanoi</div><div class="loc-item-badge">Hub</div></div>
-        <div class="loc-item-addr">5F, IDMC My Dinh Building, No.15 Pham Hung Str., Hanoi</div>
-        <div class="loc-item-tags"><div class="loc-item-tag">YIC ONE</div><div class="loc-item-tag">Sales Hub</div></div>
-      </div>
-      <div class="loc-item" id="loc-hanam" onclick="locActivate('hanam')">
-        <div class="loc-item-top"><div class="loc-item-name">Ha Nam</div><div class="loc-item-badge">Factory</div></div>
-        <div class="loc-item-addr">Ha Nam Industrial Zone, Ha Nam Province, Vietnam</div>
-        <div class="loc-item-tags"><div class="loc-item-tag">YIC VINA</div><div class="loc-item-tag">YIC HANAM</div><div class="loc-item-tag">24 Lines</div><div class="loc-item-tag">1,100+</div></div>
-      </div>
-      <div class="loc-item" id="loc-quyninh" onclick="locActivate('quyninh')">
-        <div class="loc-item-top"><div class="loc-item-name">Quy Ninh</div><div class="loc-item-badge construction">Under Construction</div></div>
-        <div class="loc-item-addr">Quy Nhon, Binh Dinh Province, Vietnam</div>
-        <div class="loc-item-tags"><div class="loc-item-tag">YIC QUY NINH</div><div class="loc-item-tag">Green Factory</div><div class="loc-item-tag">SYMBIOSIS</div></div>
-      </div>
-      <div class="loc-summary">
-        <div><div class="loc-sum-n">4</div><div class="loc-sum-l">Cities</div></div>
-        <div><div class="loc-sum-n">3</div><div class="loc-sum-l">Countries</div></div>
-        <div><div class="loc-sum-n">1,135<span style="font-size:.5em;vertical-align:super;">+</span></div><div class="loc-sum-l">People</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
