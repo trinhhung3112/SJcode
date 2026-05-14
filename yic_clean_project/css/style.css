@@ -389,7 +389,7 @@ a.card-3d{
   padding:0 24px;
   z-index:999;
 
-  background:#8dc63f;
+  background: (0, 0, 0.35);
   backdrop-filter:blur(12px);
 }
 
